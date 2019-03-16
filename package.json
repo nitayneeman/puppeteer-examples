@@ -1,0 +1,17 @@
+{
+  "name": "puppeteer-examples",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nitayneeman/puppeteer-examples.git"
+  },
+  "author": "Nitay Neeman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nitayneeman/puppeteer-examples/issues"
+  },
+  "homepage": "https://github.com/nitayneeman/puppeteer-examples#readme",
+  "dependencies": {
+    "puppeteer": "^1.12.2"
+  }
+}
