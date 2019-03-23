@@ -12,6 +12,7 @@
   },
   "homepage": "https://github.com/nitayneeman/puppeteer-examples#readme",
   "dependencies": {
+    "chrome-launcher": "^0.10.5",
     "puppeteer": "^1.12.2"
   }
 }
