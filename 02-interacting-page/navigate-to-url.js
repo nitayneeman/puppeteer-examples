@@ -9,6 +9,7 @@ const puppeteer = require('puppeteer');
 
   // Waits until the `title` meta element is rendered
   await page.waitForSelector('title');
+
   const title = await page.title();
   console.info(`The title is: ${title}`);
 
