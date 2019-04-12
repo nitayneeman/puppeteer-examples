@@ -12,5 +12,8 @@ const puppeteer = require('puppeteer');
 
   await page.goto('https://pptr.dev');
 
+  // Triggers `close` event
+  await page.close();
+
   await browser.close();
 })();
