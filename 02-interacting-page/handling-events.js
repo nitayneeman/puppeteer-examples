@@ -19,7 +19,7 @@ const puppeteer = require('puppeteer');
     await dialog.dismiss();
   });
 
-  // Emitted when a script within the page emits an error event (for example, page crashing)
+  // Emitted when the page emits an error event (for example, the page crashes)
   page.on('error', error => console.error(`❌ ${error}`));
 
   // Emitted after the page is closed
