@@ -19,6 +19,9 @@ const puppeteer = require('puppeteer');
     await dialog.dismiss();
   });
 
+  // Emitted when a script within the page emits an error event (for example, page crashing)
+  page.on('error', error => console.error(`❌ ${error}`));
+
   // Emitted after the page is closed
   page.once('close', () => console.info('✅ Page is closed'));
 
@@ -29,6 +32,9 @@ const puppeteer = require('puppeteer');
 
   // Triggers `dialog` event
   await page.evaluate(() => alert('An alert within the page'));
+
+  // Triggers `error` event
+  await page.emit('error', new Error('An error within the page'));
 
   // Triggers `close` event
   await page.close();
