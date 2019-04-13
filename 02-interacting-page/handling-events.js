@@ -51,6 +51,12 @@ const puppeteer = require('puppeteer');
   // Emitted when a response is received
   page.on('response', response => console.info(`👉 Response: ${response.url()}`));
 
+  // Emitted when the page creates a dedicated WebWorker
+  page.on('workercreated', worker => console.info(`👉 Worker: ${worker.url()}`));
+
+  // Emitted when the page destroys a dedicated WebWorker
+  page.on('workerdestroyed', worker => console.info(`👉 Destroyed worker: ${worker.url()}`));
+
   // Emitted when the page detaches a frame
   page.on('framedetached', () => console.info('✅ Frame is detached'));
 
