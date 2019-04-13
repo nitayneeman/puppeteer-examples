@@ -48,6 +48,9 @@ const puppeteer = require('puppeteer');
   // Emitted when a request, which is produced by the page, finishes successfully
   page.on('requestfinished', request => console.info(`👉 Finished request: ${request.url()}`));
 
+  // Emitted when a response is received
+  page.on('response', response => console.info(`👉 Response: ${response.url()}`));
+
   // Emitted when the page detaches a frame
   page.on('framedetached', () => console.info('✅ Frame is detached'));
 
