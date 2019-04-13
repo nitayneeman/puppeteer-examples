@@ -33,6 +33,9 @@ const puppeteer = require('puppeteer');
   // Emitted when the page emits an error event (for example, the page crashes)
   page.on('error', error => console.error(`❌ ${error}`));
 
+  // Emitted when a script within the page has uncaught exception
+  page.on('pageerror', error => console.error(`❌11 ${error}`));
+
   // Emitted when the page detaches a frame
   page.on('framedetached', () => console.info('✅ Frame is detached'));
 
