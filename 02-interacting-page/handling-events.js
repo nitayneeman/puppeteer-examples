@@ -18,6 +18,9 @@ const puppeteer = require('puppeteer');
   // Emitted when the a frame within the page is navigated to a new URL
   page.on('framenavigated', () => console.info('👉 Frame is navigated'));
 
+  // Emitted when a script within the page uses `console.timeStamp`
+  page.on('metrics', data => console.info(`👉 A timestamp added at ${data.metrics.Timestamp}`));
+
   // Emitted when a script within the page uses `console`
   page.on('console', message => console[message.type()](`👉 ${message.text()}`));
 
@@ -39,6 +42,9 @@ const puppeteer = require('puppeteer');
   // Part 2 - triggering the events
 
   await page.goto('https://pptr.dev');
+
+  // Triggers `metrics` event
+  await page.evaluate(() => console.timeStamp());
 
   // Triggers `console` event
   await page.evaluate(() => console.info('A console message within the page'));
