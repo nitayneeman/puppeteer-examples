@@ -24,17 +24,20 @@ const puppeteer = require('puppeteer');
   // Emitted when a script within the page uses `console`
   page.on('console', message => console[message.type()](`👉 ${message.text()}`));
 
+  // Emitted when the page emits an error event (for example, the page crashes)
+  page.on('error', error => console.error(`❌ ${error}`));
+
+  // Emitted when a script within the page has uncaught exception
+  page.on('pageerror', error => console.error(`❌ ${error}`));
+
   // Emitted when a script within the page uses `alert`, `prompt`, `confirm` or `beforeunload`
   page.on('dialog', async dialog => {
     console.info(`👉 ${dialog.message()}`);
     await dialog.dismiss();
   });
 
-  // Emitted when the page emits an error event (for example, the page crashes)
-  page.on('error', error => console.error(`❌ ${error}`));
-
-  // Emitted when a script within the page has uncaught exception
-  page.on('pageerror', error => console.error(`❌11 ${error}`));
+  // Emitted when a new page, that's belong to the browser context, is opened
+  page.on('popup', () => console.info('👉 A new page is opened'));
 
   // Emitted when the page detaches a frame
   page.on('framedetached', () => console.info('✅ Frame is detached'));
