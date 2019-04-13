@@ -15,7 +15,7 @@ const puppeteer = require('puppeteer');
   // Emitted when the page attaches a frame
   page.on('frameattached', () => console.info('✅ Frame is attached'));
 
-  // Emitted when the a frame within the page is navigated to a new URL
+  // Emitted when a frame within the page is navigated to a new URL
   page.on('framenavigated', () => console.info('👉 Frame is navigated'));
 
   // Emitted when a script within the page uses `console.timeStamp`
