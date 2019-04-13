@@ -39,6 +39,9 @@ const puppeteer = require('puppeteer');
   // Emitted when a new page, that's belong to the browser context, is opened
   page.on('popup', () => console.info('👉 A new page is opened'));
 
+  // Emitted the page produces a request
+  page.on('request', request => console.info(`👉 A request to ${request.url()}`));
+
   // Emitted when the page detaches a frame
   page.on('framedetached', () => console.info('✅ Frame is detached'));
 
