@@ -8,7 +8,7 @@ const puppeteer = require('puppeteer');
   await page.goto('https://pptr.dev');
   await page.waitForSelector('title');
 
-  // Takes a screenshot of area within the page
+  // Takes a screenshot of an area within the page
   await page.screenshot({
     path: 'screenshot.jpg',
     type: 'jpeg',
