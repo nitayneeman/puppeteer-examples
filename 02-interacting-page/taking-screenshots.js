@@ -8,8 +8,13 @@ const puppeteer = require('puppeteer');
   await page.goto('https://pptr.dev');
   await page.waitForSelector('title');
 
-  // Takes a screenshot of the whole page
-  await page.screenshot({ path: 'screenshot.png' });
+  // Takes a screenshot of area within the page
+  await page.screenshot({
+    path: 'screenshot.jpg',
+    type: 'jpeg',
+    quality: 80,
+    clip: { x: 50, y: 50, width: 630, height: 360 }
+  });
 
   await browser.close();
 })();
