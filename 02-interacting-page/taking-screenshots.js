@@ -13,7 +13,7 @@ const puppeteer = require('puppeteer');
     path: 'screenshot.jpg',
     type: 'jpeg',
     quality: 80,
-    clip: { x: 50, y: 50, width: 630, height: 360 }
+    clip: { x: 220, y: 0, width: 630, height: 360 }
   });
 
   await browser.close();
