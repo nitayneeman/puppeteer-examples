@@ -5,11 +5,11 @@ const puppeteer = require('puppeteer');
 
   // A reference for the default browser context
   const defaultContext = browser.defaultBrowserContext();
-  console.log(defaultContext.isIncognito()); // False
+  console.info(defaultContext.isIncognito()); // False
 
   // Creates a new browser context
   const newContext = await browser.createIncognitoBrowserContext();
-  console.log(newContext.isIncognito()); // True
+  console.info(newContext.isIncognito()); // True
 
   // Closes the created browser context
   await newContext.close();
