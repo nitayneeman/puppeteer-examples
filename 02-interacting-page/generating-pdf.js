@@ -4,6 +4,7 @@ const puppeteer = require('puppeteer');
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
+  // Navigates to the project README file
   await page.goto('https://github.com/GoogleChrome/puppeteer/blob/master/README.md');
 
   // Generates a PDF from the page content
