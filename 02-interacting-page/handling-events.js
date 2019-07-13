@@ -36,7 +36,7 @@ const puppeteer = require('puppeteer');
     await dialog.dismiss();
   });
 
-  // Emitted when a new page, that's belong to the browser context, is opened
+  // Emitted when a new page, that belongs to the browser context, is opened
   page.on('popup', () => console.info('👉 New page is opened'));
 
   // Emitted when the page produces a request
