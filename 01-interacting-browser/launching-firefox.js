@@ -1,8 +1,10 @@
-// Only the import was changed!
-const puppeteer = require('puppeteer-firefox');
+// Deprecated package
+// const puppeteer = require('puppeteer-firefox');
+const puppeteer = require("puppeteer");
 
 (async () => {
-  const browser = await puppeteer.launch();
+  // FireFox's binary is needed to be fetched before
+  const browser = await puppeteer.launch({ product: "firefox" });
   console.info(browser);
   await browser.close();
 })();

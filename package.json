@@ -14,7 +14,6 @@
   "dependencies": {
     "axios": "^0.19.2",
     "chrome-launcher": "^0.13.3",
-    "puppeteer": "^4.0.0",
-    "puppeteer-firefox": "^0.5.1"
+    "puppeteer": "^4.0.0"
   }
 }
