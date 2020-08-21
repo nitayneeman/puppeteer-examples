@@ -91,7 +91,7 @@ const puppeteer = require("puppeteer");
   await page.evaluate(() => alert("An alert within the page"));
 
   // Triggers `error` event
-  await page.emit("error", new Error("An error within the page"));
+  page.emit("error", new Error("An error within the page"));
 
   // Triggers `close` event
   await page.close();
