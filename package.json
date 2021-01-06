@@ -12,7 +12,7 @@
   },
   "homepage": "https://github.com/nitayneeman/puppeteer-examples#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "chrome-launcher": "^0.13.3",
     "puppeteer": "^5.2.1"
   }
